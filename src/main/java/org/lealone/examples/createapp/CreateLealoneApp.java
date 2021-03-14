@@ -307,7 +307,7 @@ public class CreateLealoneApp {
         File confDir = new File(moduleDir, "conf");
         confDir.mkdir();
         writeFile("/dist/conf/lealone.yaml", confDir);
-        writeFile("/dist/conf/logback.xml", confDir);
+        writeFile("/dist/conf/log4j2.xml", confDir);
 
         writeFile("/dist/assembly.xml", moduleDir);
         writeFile("/dist/pom.xml", moduleDir);
@@ -341,7 +341,7 @@ public class CreateLealoneApp {
         new File(moduleDir, srcTestJava + "/" + packageName.replace('.', '/') + "/test").mkdirs();
         File toDir = new File(moduleDir, srcTestResources);
         writeFile("/test/lealone.yaml", toDir);
-        writeFile("/test/logback-test.xml", toDir);
+        writeFile("/test/log4j2-test.xml", toDir);
         writeFile("/test/pom.xml", moduleDir);
 
         toDir = new File(moduleDir, srcTestJava);
