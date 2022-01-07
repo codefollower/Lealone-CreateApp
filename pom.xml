@@ -50,7 +50,7 @@
                                     </manifestEntries>
                                 </transformer>
                             </transformers>
-                            <outputFile>target/lealone-create-app-all-${project.version}.jar</outputFile>
+                            <outputFile>target/create-lealone-app-${project.version}.jar</outputFile>
                         </configuration>
                     </execution>
                 </executions>
