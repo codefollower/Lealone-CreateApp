@@ -35,10 +35,5 @@
             <artifactId>${artifactId}-service</artifactId>
             <version>${r'${project.version}'}</version>
         </dependency>
-        <dependency>
-            <groupId>io.vertx</groupId>
-            <artifactId>vertx-web</artifactId>
-            <version>4.0.0</version>
-        </dependency>
     </dependencies>
 </project>

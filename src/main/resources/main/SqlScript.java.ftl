@@ -95,7 +95,7 @@ public class ${appClassName}SqlScript {
         String jdbcUrl = "jdbc:lealone:tcp://localhost/${appName}?user=root&password=";
         String srcDir = this.srcDir;
         if (srcDir == null) {
-            int pos = scriptFile.indexOf("target");
+            int pos = scriptFile.lastIndexOf("target");
             if (pos > 0) {
                 srcDir = scriptFile.substring(0, pos) + "src/main/java".replace('/', File.separatorChar);
             }

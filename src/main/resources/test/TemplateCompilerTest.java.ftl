@@ -18,13 +18,14 @@
 package ${packageName}.test;
 
 import java.io.IOException;
-
 import org.lealone.server.template.TemplateCompiler;
+import ${packageName}.main.${appClassName};
 
 public class ${appClassName}TemplateCompilerTest {
 
     public static void main(String[] args) throws IOException {
-        args = new String[] { "-webRoot", "../${appName}-web/web" };
+        String webRoot = ${appClassName}.getAbsolutePath("${appName}-web/web");
+        args = new String[] { "-webRoot", webRoot };
         TemplateCompiler.main(args);
     }
 
