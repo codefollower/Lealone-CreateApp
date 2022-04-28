@@ -21,7 +21,6 @@ import ${packageName}.main.${appClassName};
 
 import org.lealone.common.exceptions.ConfigException;
 import org.lealone.p2p.config.Config;
-import org.lealone.p2p.config.Config.PluggableEngineDef;
 import org.lealone.p2p.config.YamlConfigLoader;
 import org.lealone.server.http.HttpServerEngine;
 
@@ -36,11 +35,7 @@ public class ${appClassName}Test extends YamlConfigLoader {
     public void applyConfig(Config config) throws ConfigException {
         // 动态生成绝对路径的webRoot，使用相对路径在eclipse和idea下面总有一个不正确
         String webRoot = ${appClassName}.getAbsolutePath("${appName}-web/web");
-        for (PluggableEngineDef e : config.protocol_server_engines) {
-            if (HttpServerEngine.NAME.equalsIgnoreCase(e.name)) {
-                e.parameters.put("web_root", webRoot);
-            }
-        }
+        config.getProtocolServerParameters(HttpServerEngine.NAME).put("web_root", webRoot);
         super.applyConfig(config);
     }
 }
