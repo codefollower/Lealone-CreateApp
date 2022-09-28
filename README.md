@@ -43,7 +43,7 @@ java -jar ./target/create-lealone-app-5.0.0.jar [选项]
 
 ### 例如创建一个 hello 应用
 
-java -jar ./target/create-lealone-app-5.0.0.jar -groupId my.lealone.app.hello -artifactId hello
+java -jar ./target/create-lealone-app-5.0.0.jar -groupId org.lealone.examples.hello -artifactId hello
 
 
 ### 构建 hello 应用
