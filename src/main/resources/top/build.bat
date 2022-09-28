@@ -71,7 +71,7 @@ mvn clean
 goto p
 
 :c
-call mvn clean package assembly:assembly -Dmaven.test.skip=true
+call mvn clean
 goto end
 
 :i
