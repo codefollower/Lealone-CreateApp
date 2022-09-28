@@ -18,6 +18,12 @@ base_dir: ../data
 
 listen_address: 127.0.0.1
 
+scheduler:
+    parameters: {
+        # scheduler_count: 8, # 调度服务线程个数，默认是 cpu 核数
+        # max_packet_count_per_loop: 20, # 每次循环最多读取多少个数据包，默认20
+    }
+
 storage_engines:
   - name: AOSE
     enabled: true
@@ -60,40 +66,3 @@ protocol_server_engines:
         router_factory: "${packageName}.web.${appClassName}RouterFactory",
         jdbc_url: "jdbc:lealone:embed:${appName}"
     }
-  - name: P2P
-    enabled: false
-    parameters: {
-        port: 9211,
-        ssl: false
-    }
-
-server_encryption_options:
-    keystore: conf/.keystore
-    keystore_password: lealone
-    truststore: conf/.truststore
-    truststore_password: lealone
-
-cluster_config:
-    cluster_name: Test Cluster
-    node_snitch: SimpleSnitch
-    dynamic_snitch: true
-    request_timeout_in_ms: 10000
-
-    seed_provider:
-        name: SimpleSeedProvider
-        parameters: {
-            seeds: "127.0.0.1"
-        }
-
-    replication_strategy:
-        name: SimpleStrategy
-        parameters: {
-            replication_factor: 3
-        }
-
-    # replication_strategy:
-    #     name: NetworkTopologyStrategy
-    #     parameters: {
-    #         dc1: 1,
-    #         dc2: 2
-    #     }

@@ -20,8 +20,8 @@ package ${packageName}.test;
 import ${packageName}.main.${appClassName};
 
 import org.lealone.common.exceptions.ConfigException;
-import org.lealone.p2p.config.Config;
-import org.lealone.p2p.config.YamlConfigLoader;
+import org.lealone.main.config.Config;
+import org.lealone.main.config.YamlConfigLoader;
 import org.lealone.server.http.HttpServerEngine;
 
 public class ${appClassName}Test extends YamlConfigLoader {
